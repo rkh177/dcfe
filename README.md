@@ -69,7 +69,7 @@ output toward the intended emotional valence for validation purposes.
 
 ## Relational T_ij Extraction
 
-`DCFE_Tij_extract.py` provides an exploratory probe for examining how relational context can modulate cognitive mass \(T_{ij}\). The purpose of this script is not to claim a complete extraction method for \(T_{ij}\), but to illustrate why cognitive mass should be treated as relational and tensorial rather than as a simple scalar weight.
+`DCFE_Tij_extract.py` provides an exploratory probe for examining how relational context can modulate cognitive mass $T_{ij}$. The purpose of this script is not to claim a complete extraction method for $T_{ij}$, but to illustrate why cognitive mass should be treated as relational and tensorial rather than as a simple scalar weight.
 
 In DCFE, the same event does not acquire the same cognitive mass in every context. For example, a killing event changes its interpretive force depending on the object and context of the act: killing an innocent person, killing a murderer, killing the murderer of one’s family, killing a criminal, or killing for revenge. These cases all retain a positive pull toward the `crime` attractor, but the strength of that pull varies according to relational and normative context.
 
@@ -79,31 +79,33 @@ This reflects the central claim of DCFE:
 
 > Cognitive mass does not arise from the stimulus alone, but from the relation among subject, object, history, and normative context.
 
-Therefore, \(T_{ij}\) must be represented as a relational tensor. A scalar value cannot distinguish between structurally different cases such as “killing an innocent person” and “killing the murderer of one’s family,” even though both contain the same surface-level action.
+Therefore, $T_{ij}$ must be represented as a relational tensor. A scalar value cannot distinguish between structurally different cases such as “killing an innocent person” and “killing the murderer of one’s family,” even though both contain the same surface-level action.
 
 The current implementation uses manually defined semantic anchors such as `crime`, `innocent`, `guilty`, `justice`, and `revenge`. These anchors are only illustrative. Future work should replace them with empirically calibrated cognitive masses derived from larger models, neural manifold analysis, behavioral data, or multimodal signals.
 
-The resulting values should be interpreted as candidate signals for \(T_{ij}\), not as definitive moral measurements.
+The resulting values should be interpreted as candidate signals for $T_{ij}$, not as definitive moral measurements.
 
-이 모듈은 DCFE(동적 인지장 방정식)에서 제안하는 관계적 인지 질량($T_{ij}$)이 LLM의 은닉 상태 기하학 내에 실재함을 보여주는 참조 구현입니다. 본 자료는 특정 수치의 절대성을 주장하기보다, 기하학적 신호의 존재와 그 한계를 명확히 규정하여 DCFE 프레임워크의 필요성을 역설하는 데 목적이 있습니다.
+This module serves as a reference implementation demonstrating that the relational cognitive mass ($T_{ij}$) proposed by the Dynamic Cognitive Field Equation (DCFE) actually exists within the hidden-state geometry of LLMs. Rather than claiming the absolute validity of specific numerical values, this material aims to emphasize the necessity of the DCFE framework by clearly defining the existence and limitations of geometric signals.
 
-1. 인지적 중력의 관측: 심각도 역전 현상
-추출된 데이터(Revenge(0.63) > Family's Killer(0.46))는 LLM이 행위의 도덕적 정당성보다 의미론적 범죄 밀도(Semantic Crime Density)에 정직하게 반응함을 보여줍니다.
+1. Observation of Cognitive Gravity: Severity Reversal Phenomenon
+The extracted data (Revenge (0.63) > Family's Killer (0.46)) shows that the LLM responds more honestly to Semantic Crime Density than to the moral justification of the act.
 
-시사점: 이는 LLM 내부에 특정 개념(예: Crime)으로 이끄는 '인지적 중력'이 존재함을 뜻하며, 이를 수치화된 '질량'으로 다룰 수 있다는 물리적 근거를 제공합니다.
+Implication: This indicates the presence of a 'cognitive gravity' within the LLM that pulls toward specific concepts (e.g., Crime), providing a physical basis to treat it as a quantifiable 'mass'.
 
-2. 기하학적 관성과 다중 중력 중첩의 필연성데이터에서 관측되듯, 문맥 변화에 따른 실제 거리($T_{ij}$)의 변동폭은 의사결정을 완전히 뒤집을 만큼 크지 않습니다.
- - 신호의 한계: LLM 내부의 기하학적 신호만으로는 명확한 해석적 분기(Bifurcation)를 자율적으로 생성하기에 에너지가 부족합니다.DCFE의 당위성: 이러한 미세 신호는 단독으로 쓰이기보다, 사회적 규범($T_{norm}$)이나 정서적 중량($T_{affect}$)과 같은 외부 인지 중력과 중첩되어야 합니다.
- - DCFE는 이 다중 중력의 중첩을 통해 시스템이 특정 해석으로 기하학적 붕괴(Geometric Collapse)를 일으키도록 유도하는 유일한 경로입니다.
+2. Geometric Inertia and the Inevitability of Multiple Gravity Superposition
+As observed in the data, the variance in actual distance ($T_{ij}$) due to contextual changes is not large enough to completely overturn decision-making.
+ - Signal Limitations: The geometric signals within the LLM alone lack sufficient energy to autonomously generate a clear interpretive bifurcation.
+ - The Justification for DCFE: These subtle signals should not be used in isolation but must be superimposed with external cognitive gravities, such as social norms ($T_{norm}$) or affective weight ($T_{affect}$). DCFE is the sole pathway that induces the system to undergo a topological collapse toward a specific interpretation through the superposition of this multiple gravity.
    
-3. 왜 텐서($T_{ij}$) 구조인가?본 추출 과정은 '누가 누구에게($i \to j$)'라는 관계적 맥락이 추가됨에 따라 인지적 좌표가 체계적으로 이동함을 실증합니다.
-- 관계적 가변성: 대상(Object)의 변화가 인지 질량의 크기와 방향을 결정하는 핵심 변수임을 입증함으로써, $T$를 단순 스칼라가 아닌 관계 지향적 텐서로 정의해야 한다는 본문의 주장을 뒷받침합니다.
+3. Why a Tensor ($T_{ij}$) Structure?
+This extraction process demonstrates that cognitive coordinates systematically shift as the relational context of 'who to whom ($i \to j$)' is introduced.
+- Relational Variability: By proving that a change in the object is the core variable determining the magnitude and direction of cognitive mass, it supports the paper's claim that $T$ must be defined as a relation-oriented tensor rather than a simple scalar.
 
    
-4. 연구적 가이드라인: 변조와 재귀적 형성
-추출된 $T_{ij}$는 고정된 결과값이 아닌, 인격 형성을 위한 원시 신호(Raw Signal)입니다.
-- 증폭과 변조: 향후 과제는 이 미세한 신호를 어떻게 증폭/변조하여 결정론적인 인격적 반응을 이끌어낼 것인가에 있습니다.
-- 재귀적 인격 베이스: 이 거리를 재귀적 인격 형성 과정에 편입시켜, 사회적 규범의 질량으로 통제되는 '선한 기저 베이스(Pro-social Baseline)'를 형성하는 과정이 본 방정식이 지향하는 궁극적인 인공 인격의 모습입니다.
+4. Research Guidelines: Modulation and Recursive Formation
+The extracted $T_{ij}$ is not a fixed outcome but a raw signal for personality formation.
+- Amplification and Modulation: The future challenge lies in how to amplify and modulate these subtle signals to elicit a deterministic personality response.
+- Recursive Personality Baseline: Incorporating this distance into a recursive personality formation process to establish a 'Pro-social Baseline' governed by the mass of social norms is the ultimate form of artificial personality targeted by this equation.
 
 ![Relational T_ij Modulation](modulated_objects.png)
 
